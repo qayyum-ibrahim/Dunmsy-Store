@@ -80,11 +80,11 @@ function ProductDetail({ p, onBack, onAdd }) {
       <button onClick={onBack} className="mb-6 flex items-center gap-1 text-sm text-neutral-600 hover:text-neutral-900"><ChevronLeft size={18} />Back to Shop</button>
       <div className="grid gap-10 md:grid-cols-2">
         <div>
-          <Img key={i} src={cld(p.imgs[i], 1200)} alt={`${p.name}, angle ${i + 1}`} className="aspect-[4/5] w-full" />
+          <Img key={i} src={cld(p.imgs[i], 1200)} alt={`${p.name}, angle ${i + 1}`} className="aspect-4/5 w-full" />
           <div className="mt-3 grid grid-cols-3 gap-3">
             {p.imgs.map((s, j) => (
               <button key={s} aria-label={`Show angle ${j + 1}`} aria-pressed={j === i} onClick={() => setI(j)} className={`border-2 ${j === i ? 'border-neutral-900' : 'border-transparent'}`}>
-                <Img src={cld(s, 240)} alt="" className="aspect-[4/5] w-full" />
+                <Img src={cld(s, 240)} alt="" className="aspect-4/5 w-full" />
               </button>
             ))}
           </div>
@@ -210,7 +210,7 @@ export default function App() {
               <p className="mt-6 max-w-md text-neutral-600">Adire, Ankara and Aso-Oke, tailored for the way you dress today.</p>
               <a href="#collection" className="mt-8 inline-block bg-neutral-900 px-7 py-3.5 text-white transition-colors hover:bg-amber-600">Shop Collection</a>
             </div>
-            <Img src={cld(PRODUCTS[1].imgs[0], 1000)} alt="Dunmsy Store lookbook" className="aspect-[4/5] w-full" />
+            <Img src={cld(PRODUCTS[1].imgs[0], 800)} alt="Dunmsy Store lookbook" className="aspect-4/5 w-full" />
           </section>
 
           <section id="collection" className="mx-auto max-w-6xl scroll-mt-20 px-5 pb-20">
@@ -219,7 +219,7 @@ export default function App() {
               {shown.map((p) => (
                 <article key={p.id} className="flex flex-col">
                   <button onClick={() => openProduct(p)} className="text-left">
-                    <Img src={cld(p.imgs[0], 600)} alt={p.name} className="aspect-[4/5] w-full" />
+                    <Img src={cld(p.imgs[0], 600)} alt={p.name} className="aspect-4/5 w-full" />
                     <h3 className="mt-3 font-medium">{p.name}</h3>
                   </button>
                   <p className="mt-1 flex-1 text-sm text-neutral-600">{p.desc}</p>
@@ -291,7 +291,7 @@ export default function App() {
       </aside>
 
       {receipt && (
-        <div className="fixed inset-0 z-[60] overflow-auto bg-neutral-900/70 p-4">
+        <div className="fixed inset-0 z-60 overflow-auto bg-neutral-900/70 p-4">
           <div id="receipt" className="mx-auto my-6 max-w-md bg-white p-8 text-neutral-900">
             <div className="border-b border-neutral-200 pb-5 text-center">
               <h2 className="font-display text-3xl">Dunmsy Store</h2>
