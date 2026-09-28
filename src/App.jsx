@@ -5,6 +5,7 @@ const PAYSTACK_KEY = import.meta.env.VITE_PAYSTACK_KEY || 'pk_test_a1b2c3d4e5f6g
 // Replace 'demo' with your Cloudinary cloud name (or set VITE_CLOUDINARY_CLOUD).
 // Public IDs below ("dunmsy/<slug>/front" etc.) are the folder paths to match in your Media Library.
 const CLOUD = import.meta.env.VITE_CLOUDINARY_CLOUD || 'demo'
+
 const cld = (publicId, w = 800) =>
   `https://res.cloudinary.com/${CLOUD}/image/upload/f_auto,q_auto,c_fill,ar_4:5,w_${w}/${publicId}`
 
@@ -20,7 +21,7 @@ const label = (l) => `${l.name} — Size: ${l.size} | Color: ${l.color}`
 
 const mk = (id, cat, name, price, slug, desc, fabric) => ({
   id, cat, name, price, desc, fabric,
-  imgs: ['front', 'side', 'detail'].map((a) => `dunmsy/${slug}/${a}`),
+  imgs: ['front', 'side', 'detail'].map((a) => `dunmsy-store/${slug}/${a}`),
 })
 const PRODUCTS = [
   mk(1, 'Sets', 'Adire Silk Kimono Jacket', 45000, 'adire-kimono', 'Richly dyed indigo silk luxury layering piece with wide flowy sleeves.', 'Silk with a hand-dyed indigo adire finish'),
